@@ -4,8 +4,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
+    //    automouse-layer = <4>;
+
+    scroll-layers = <3>;
 
     // arrows {
     //     layers = <3>;
@@ -151,10 +152,10 @@
 
         layer_2 {
             bindings = <
-&kp F6  &kp F7        &kp F8        &kp F9   &kp F10                                           &trans          &kp PAGE_DOWN   &kp PAGE_UP   &trans           &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &trans          &kp LC(C)              &kp LC(V)  &kp LEFT        &kp DOWN        &kp UP_ARROW  &kp RIGHT        &trans
-&trans  &trans        &trans        &trans   &trans          &kp LC(X)              &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-&trans  &trans        &trans        &trans   &kp LEFT_SHIFT  &kp K_APPLICATION      &trans     &trans                                                         &trans
+&kp F6  &kp F7        &kp F8        &kp F9            &kp F10                                           &trans          &kp PAGE_DOWN   &kp PAGE_UP   &trans           &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB           &trans          &kp LC(C)              &kp LC(V)  &kp LEFT        &kp DOWN        &kp UP_ARROW  &kp RIGHT        &trans
+&trans  &trans        &trans        &kp LEFT_CONTROL  &trans          &kp LC(X)              &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+&trans  &trans        &trans        &trans            &kp LEFT_SHIFT  &kp K_APPLICATION      &trans     &trans                                                         &trans
             >;
         };
 
