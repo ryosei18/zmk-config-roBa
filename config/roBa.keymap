@@ -127,6 +127,24 @@
         };
     };
 
+    macros {
+        m_alt_tab: m_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&macro_press>, <&kp TAB>, <&macro_press>;
+
+            label = "M_ALT_TAB";
+        };
+
+        m_finish: m_finish {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(LSHIFT))>, <&macro_release>;
+
+            label = "M_FINISH";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -153,9 +171,9 @@
         layer_2 {
             bindings = <
 &kp F6  &kp F7        &kp F8        &kp F9            &kp F10                                           &trans          &kp PAGE_DOWN   &kp PAGE_UP   &trans           &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB           &trans          &kp LC(C)              &kp LC(V)  &kp LEFT        &kp DOWN        &kp UP_ARROW  &kp RIGHT        &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &m_alt_tab        &trans          &kp LC(C)              &kp LC(V)  &kp LEFT        &kp DOWN        &kp UP_ARROW  &kp RIGHT        &trans
 &trans  &trans        &trans        &kp LEFT_CONTROL  &trans          &kp LC(X)              &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-&trans  &trans        &trans        &trans            &kp LEFT_SHIFT  &kp K_APPLICATION      &trans     &trans                                                         &trans
+&trans  &trans        &trans        &trans            &kp LEFT_SHIFT  &kp K_APPLICATION      &trans     &m_finish                                                      &trans
             >;
         };
 
