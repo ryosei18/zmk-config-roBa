@@ -97,7 +97,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LT_ENTER_FAST";
             bindings = <&m_finish>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick-tap-ms = <200>;
@@ -131,7 +130,7 @@
         m_alt_tab: m_alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp TAB>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>;
 
             label = "M_ALT_TAB";
         };
@@ -140,21 +139,17 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&mo 2>,
+                <&macro_press &mo 2>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 2>,
-                <&macro_tap>,
-                <&m_fi>;
-
+                <&macro_release &mo 2>,
+                <&macro_tap &m_fi>;
             label = "M_FINISH";
         };
 
         m_fi: m_fi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LALT &kp LSHIFT &kp LCTRL>;
+            bindings = <&macro_release &kp LALT &kp LSHIFT &kp LCTRL>;
 
             label = "M_FI";
         };
@@ -168,7 +163,7 @@
 &q_esc  &kp W   &kp E   &kp R           &kp T                                                                             &kp Y                   &kp U           &kp I       &kp O      &kp P
 &kp A   &kp S   &kp D   &mt LEFT_ALT F  &kp G                  &none                                    &none             &kp H                   &mt LEFT_ALT J  &kp K       &lt 3 L    &mt LEFT_SHIFT LEFT_ALT
 &kp Z   &kp X   &kp C   &kp V           &kp B                  &none                                    &none             &kp N                   &kp M           &comm_ecxl  &dot_ques  &kp DELETE
-&trans  &trans  &trans  &trans          &lt_spac_fast 1 SPACE  &backspac_fast LEFT_SHIFT BACKSPACE      &kp LEFT_CONTROL  &lt_enter_fast 2 ENTER                                         &trans
+&trans  &trans  &trans  &trans          &lt_spac_fast 1 SPACE  &backspac_fast LEFT_SHIFT BACKSPACE      &kp LEFT_CONTROL  &lt_enter_fast 0 ENTER                                         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
